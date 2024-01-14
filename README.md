@@ -28,25 +28,31 @@ Before running the scripts, make sure you have the following requirements instal
 - torchvision
 - Pillow
 
+## Steps
 Install the required libraries using the following command:
 
 ```bash
 pip install torch torchvision pillow
+
 Usage
 Training
 To train the model on your dataset, follow these steps:
 
 Organize your dataset into train and valid folders inside a root data directory.
+
 Run the training script:
 python train.py data_directory --arch vgg16 --hidden_units 512 --learning_rate 0.001 --epochs 3 --save_dir checkpoints --gpu
+
 Replace data_directory with the path to your root data directory.
 
 Prediction
 To make predictions on new images using a pre-trained VGG16 model, follow these steps:
 
 Prepare an image for prediction.
+
 Run the prediction script:
 python predict.py input_image checkpoint.pth --category_names cat_to_name.json --gpu
+
 Replace input_image with the path to the image file, checkpoint.pth with the path to your pre-trained model checkpoint, and optionally provide --category_names if you have a JSON file mapping class indices to human-readable class names.
 
 Project Structure
